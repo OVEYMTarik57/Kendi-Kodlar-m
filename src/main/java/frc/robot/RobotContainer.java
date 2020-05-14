@@ -49,6 +49,7 @@ public class RobotContainer {
   private final LiftSubsystem m_lift = new LiftSubsystem();
   public final ArmSubsystem m_arm = new ArmSubsystem();
   private final HopperSubsystem m_hopper = new HopperSubsystem();
+  private final SneakyTrajectory m_SneakyTrajectory = new SneakyTrajectory(m_drive);
   
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
 
