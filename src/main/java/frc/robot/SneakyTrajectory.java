@@ -21,15 +21,19 @@ import edu.wpi.first.wpilibj.trajectory.constraint.DifferentialDriveVoltageConst
 import edu.wpi.first.wpilibj2.command.RamseteCommand;
 import frc.robot.Constants.DriveConstants;
 import frc.robot.commands.autonomous.Middle3Cell;
+import frc.robot.commands.autonomous.Right6Cell;
 import frc.robot.subsystems.DriveSubsystem;
 
 /**
  * Add your docs here.
  */
 public class SneakyTrajectory {
-    public Trajectory CenterRight6Cell[];
+    public Trajectory CenterRight6Cell[]; //yazdığımız otonomları burada tanımlıyoruz.
+    public Trajectory Left3Cell[];
     public Trajectory Middle3Cell[];
+    public Trajectory Right6Cell[];    
     private DriveSubsystem m_drive;
+    
 
     public SneakyTrajectory(DriveSubsystem drive){
        m_drive =drive;
@@ -77,13 +81,36 @@ public class SneakyTrajectory {
                      configForward);    
     
 
-                     Middle3Cell[0] = TrajectoryGenerator.generateTrajectory(  // ikinci aşama olduğu için 1 yazık.
+                     Middle3Cell[0] = TrajectoryGenerator.generateTrajectory(  
                      List.of(
                      new Pose2d(3.09868824, 2.42023392, new Rotation2d(3.141592654)), //rotation açı fakat radyan biriminden.
                      new Pose2d(1.40448792, 2.42023392, new Rotation2d(3.141592654))),
                     configForward);    
+
+
+
+                    Left3Cell[0] = TrajectoryGenerator.generateTrajectory(  
+                     List.of(
+                     new Pose2d(3.11380632, 4.41694824, new Rotation2d(-2.539305709)), //rotation açı fakat radyan biriminden.
+                     new Pose2d(1.55576016, 3.34295496, new Rotation2d(-2.539305709))),
+                    configForward);    
             
 
+                    
+                    Right6Cell[0] = TrajectoryGenerator.generateTrajectory(  
+                     List.of(
+                     new Pose2d(12.80992104, 5.80860408, new Rotation2d(3.141592654)), //rotation açı fakat radyan biriminden.
+                     new Pose2d(10.767822, 7.53301008, new Rotation2d(3.141592654)),
+                     new Pose2d(8.07531024, 7.53301008, new Rotation2d(3.141592654))),
+                    configForward);  
+
+
+                    Right6Cell[1] = TrajectoryGenerator.generateTrajectory(  
+                     List.of(
+                     new Pose2d(8.07531024, 7.53301008, new Rotation2d(0)), //rotation açı fakat radyan biriminden.
+                     new Pose2d(10.767822, 7.53301008, new Rotation2d(0)),
+                     new Pose2d(12.80992104, 5.80860408, new Rotation2d(0))),
+                    configForward);  
 
      
      

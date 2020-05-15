@@ -27,6 +27,9 @@ import frc.robot.Constants.JoystickConstants;
 import frc.robot.commands.*;
 import frc.robot.commands.autonomous.AutonomousCommand;
 import frc.robot.commands.autonomous.AutonomousDeneme;
+import frc.robot.commands.autonomous.Left3Cell;
+import frc.robot.commands.autonomous.Middle3Cell;
+import frc.robot.commands.autonomous.Right6Cell;
 import frc.robot.subsystems.*;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RamseteCommand;
@@ -177,7 +180,11 @@ public class RobotContainer {
     case 2:
     return new  AutonomousDeneme(m_lift, m_arm, m_drive, m_shooter, m_hopper, m_intake);
     case 3:
-    return trajectoryCommand();
+    return new Right6Cell(m_SneakyTrajectory, m_shooter, m_intake, m_hopper, m_drive);
+    case 4:
+    return new Left3Cell(m_SneakyTrajectory, m_shooter, m_intake, m_hopper, m_drive);
+    case 5: 
+    return new Middle3Cell(m_SneakyTrajectory, m_shooter, m_intake, m_hopper, m_drive);
     default:
     return null; 
   
