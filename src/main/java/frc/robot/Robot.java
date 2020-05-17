@@ -23,7 +23,7 @@ public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
 
   private RobotContainer m_robotContainer;
-  private SendableChooser<Integer> m_autonomousChooser;
+  private SendableChooser<Integer> m_autonomousChooser; //Autonom seçme noktası.
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -31,14 +31,13 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
-    // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
-    // autonomous chooser on the dashboard.
+    //Autonom seçme yeri.
     m_robotContainer = new RobotContainer();
     m_autonomousChooser = new SendableChooser<Integer>();
     m_autonomousChooser.setDefaultOption("orta", 1);
     m_autonomousChooser.addOption("sag", 2);
     m_autonomousChooser.addOption("sol", 3);
-    SmartDashboard.putData("Otonom Secimi", m_autonomousChooser);
+    SmartDashboard.putData("Otonom Secimi", m_autonomousChooser); //SmartDashbooard a yerleştirme.
 
   }
 

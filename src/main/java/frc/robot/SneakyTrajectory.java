@@ -29,12 +29,14 @@ import frc.robot.subsystems.DriveSubsystem;
  * Add your docs here.
  */
 public class SneakyTrajectory {
-    public Trajectory CenterRight6Cell[]; //yazdığımız otonomları burada tanımlıyoruz.
-    public Trajectory Left3Cell[];
-    public Trajectory Middle3Cell[];
-    public Trajectory Right6Cell[]; 
-    public Trajectory Left8Cell[]; 
+    public Trajectory[] CenterRight6Cell = new Trajectory[2]; //yazdığımız otonomları burada tanımlıyoruz.
+    public Trajectory[] Left3Cell = new Trajectory[1];
+    public Trajectory[] Middle3Cell = new Trajectory[1];
+    public Trajectory[] Right6Cell = new Trajectory[2];
+    public Trajectory[] Left8Cell = new Trajectory[4];
     private DriveSubsystem m_drive;
+
+
     
 
     public SneakyTrajectory(DriveSubsystem drive){
@@ -135,7 +137,7 @@ public class SneakyTrajectory {
                      configForward);  
 
 
-                     Left8Cell[2] = TrajectoryGenerator.generateTrajectory(  
+                     Left8Cell[3] = TrajectoryGenerator.generateTrajectory(  
                       List.of(
                       new Pose2d(12.91580856, 4.12955232, new Rotation2d(0.499347426)), //rotation açı fakat radyan biriminden.
                       new Pose2d(11.356848, 7.290816, new Rotation2d(2.413167273)),
