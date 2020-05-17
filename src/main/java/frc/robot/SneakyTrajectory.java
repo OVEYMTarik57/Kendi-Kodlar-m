@@ -20,6 +20,7 @@ import edu.wpi.first.wpilibj.trajectory.TrajectoryGenerator;
 import edu.wpi.first.wpilibj.trajectory.constraint.DifferentialDriveVoltageConstraint;
 import edu.wpi.first.wpilibj2.command.RamseteCommand;
 import frc.robot.Constants.DriveConstants;
+import frc.robot.commands.autonomous.Left8Cell;
 import frc.robot.commands.autonomous.Middle3Cell;
 import frc.robot.commands.autonomous.Right6Cell;
 import frc.robot.subsystems.DriveSubsystem;
@@ -31,7 +32,8 @@ public class SneakyTrajectory {
     public Trajectory CenterRight6Cell[]; //yazdığımız otonomları burada tanımlıyoruz.
     public Trajectory Left3Cell[];
     public Trajectory Middle3Cell[];
-    public Trajectory Right6Cell[];    
+    public Trajectory Right6Cell[]; 
+    public Trajectory Left8Cell[]; 
     private DriveSubsystem m_drive;
     
 
@@ -97,12 +99,14 @@ public class SneakyTrajectory {
             
 
                     
+                   
+                   
                     Right6Cell[0] = TrajectoryGenerator.generateTrajectory(  
                      List.of(
                      new Pose2d(12.80992104, 5.80860408, new Rotation2d(3.141592654)), //rotation açı fakat radyan biriminden.
                      new Pose2d(10.767822, 7.53301008, new Rotation2d(3.141592654)),
                      new Pose2d(8.07531024, 7.53301008, new Rotation2d(3.141592654))),
-                    configForward);  
+                    configBackward);  
 
 
                     Right6Cell[1] = TrajectoryGenerator.generateTrajectory(  
@@ -111,6 +115,44 @@ public class SneakyTrajectory {
                      new Pose2d(10.767822, 7.53301008, new Rotation2d(0)),
                      new Pose2d(12.80992104, 5.80860408, new Rotation2d(0))),
                     configForward);  
+
+
+
+
+
+
+                    Left8Cell[0] = TrajectoryGenerator.generateTrajectory(  
+                     List.of(
+                     new Pose2d(12.7796544, 0.80171544, new Rotation2d(3.141592654)), //rotation açı fakat radyan biriminden.
+                     new Pose2d(9.9963732, 0.80171544, new Rotation2d(3.141592654))),
+                    configBackward);  
+
+
+                    Left8Cell[1] = TrajectoryGenerator.generateTrajectory(  
+                      List.of(
+                      new Pose2d(9.9963732, 0.80171544, new Rotation2d(0)), //rotation açı fakat radyan biriminden.
+                      new Pose2d(12.91580856, 4.12955232, new Rotation2d(0.499347426))),
+                     configForward);  
+
+
+                     Left8Cell[2] = TrajectoryGenerator.generateTrajectory(  
+                      List.of(
+                      new Pose2d(12.91580856, 4.12955232, new Rotation2d(0.499347426)), //rotation açı fakat radyan biriminden.
+                      new Pose2d(11.356848, 7.290816, new Rotation2d(2.413167273)),
+                      new Pose2d(8.104632, 7.531608, new Rotation2d(-3.114424858))),
+                     configBackward);  
+
+                     
+                     Left8Cell[3] = TrajectoryGenerator.generateTrajectory(  
+                      List.of(
+                      new Pose2d(8.104632, 7.531608, new Rotation2d(-3.114424858)), //rotation açı fakat radyan biriminden.
+                      new Pose2d(10.814304, 7.427976, new Rotation2d(-0.205395582)),
+                      new Pose2d(12.780264, 5.779008, new Rotation2d(0))),
+                     configForward);  
+
+
+
+                   
 
      
      
