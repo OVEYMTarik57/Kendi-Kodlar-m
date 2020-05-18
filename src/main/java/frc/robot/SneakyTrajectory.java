@@ -22,6 +22,7 @@ import edu.wpi.first.wpilibj2.command.RamseteCommand;
 import frc.robot.Constants.DriveConstants;
 import frc.robot.commands.autonomous.Left8Cell;
 import frc.robot.commands.autonomous.Middle3Cell;
+import frc.robot.commands.autonomous.Right3Cell;
 import frc.robot.commands.autonomous.Right6Cell;
 import frc.robot.subsystems.DriveSubsystem;
 
@@ -34,6 +35,7 @@ public class SneakyTrajectory {
     public Trajectory[] Middle3Cell = new Trajectory[1];
     public Trajectory[] Right6Cell = new Trajectory[2];
     public Trajectory[] Left8Cell = new Trajectory[4];
+    public Trajectory[] Right3Cell = new Trajectory[1];
     private DriveSubsystem m_drive;
 
 
@@ -150,6 +152,16 @@ public class SneakyTrajectory {
                       new Pose2d(8.104632, 7.531608, new Rotation2d(-3.114424858)), //rotation açı fakat radyan biriminden.
                       new Pose2d(10.814304, 7.427976, new Rotation2d(-0.205395582)),
                       new Pose2d(12.780264, 5.779008, new Rotation2d(0))),
+                     configForward);  
+
+
+
+
+
+                     Right3Cell[0] = TrajectoryGenerator.generateTrajectory(  
+                      List.of(
+                      new Pose2d(12.80992104, 7.77505176, new Rotation2d(-0.550386089)), //rotation açı fakat radyan biriminden.
+                      new Pose2d(14.24693112, 7.06410576, new Rotation2d(-0.550386089))),
                      configForward);  
 
 
