@@ -105,7 +105,7 @@ public static final int intakeSolenoidBackwardPort =1;
         public static final int centerArmMotorPort = 10;
         public static final int armPotPort = 0;
         public static final int ArmEncoder_A = 4;
-        public static final int ArmEncoder_B = 5;
+        public static final int ArmEncoder_B = 9;
 
         
     }
