@@ -139,7 +139,7 @@ public class SneakyTrajectory {
                      configForward);  
 
 
-                     Left8Cell[3] = TrajectoryGenerator.generateTrajectory(  
+                     Left8Cell[2] = TrajectoryGenerator.generateTrajectory(  
                       List.of(
                       new Pose2d(12.91580856, 4.12955232, new Rotation2d(0.499347426)), //rotation açı fakat radyan biriminden.
                       new Pose2d(11.356848, 7.290816, new Rotation2d(2.413167273)),
