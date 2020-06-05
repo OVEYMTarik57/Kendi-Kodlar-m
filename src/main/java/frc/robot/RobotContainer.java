@@ -46,7 +46,6 @@ import edu.wpi.first.wpilibj2.command.button.POVButton;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
   private final intake m_intake = new intake(); 
   private final Shooter m_shooter = new Shooter();
   private final DriveSubsystem m_drive = new DriveSubsystem();
@@ -56,7 +55,7 @@ public class RobotContainer {
   private final HopperSubsystem m_hopper = new HopperSubsystem();
   private final SneakyTrajectory m_SneakyTrajectory = new SneakyTrajectory(m_drive);
   
-  private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
+  
 
   public Joystick m_driverController = new Joystick(JoystickConstants.driverControllerPort);
 
